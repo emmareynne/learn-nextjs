@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { getHugoPostData } from '../lib/hugosite'
+import Link from 'next/link'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -38,6 +39,10 @@ export default function Home({ allPostsData }) {
               {id}
               <br />
               {date}
+              <br />
+              <Link href={`/posts/${id}`}>
+                <a>Link</a>
+              </Link>
             </li>
           ))}
         </ul>
