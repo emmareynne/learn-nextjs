@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 import { getHugoPostData } from '../lib/hugosite'
 import Link from 'next/link'
 
+
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   
@@ -21,6 +22,7 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hello, I'm Emma. I'm a software engineer and a translator (English/Japanese).</p>
